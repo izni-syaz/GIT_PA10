@@ -13,5 +13,13 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         else
             transform.Translate(Vector3.right * Time.deltaTime * -Speed);
+
+
+
+        if (transform.position.x <= -7)
+        {
+            Destroy(gameObject);
+            GameManager.thisManager.UpdateScore();
+        }
     }
 }
